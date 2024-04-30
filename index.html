@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API, jQuery & CRUD- Final Project 215</title>
+    <script src="final215.js" defer></script>
+    <script src="lib/jquery-3.7.1.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center; 
+        }
+
+        #submitButton {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #007bff; 
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #submitButton:hover {
+            background-color: #0056b3; 
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .card h2 {
+            margin-bottom: 10px; 
+        }
+
+        .action-list {
+            text-align: left; 
+            padding-left: 0; 
+        }
+
+        .action-list li {
+            margin-bottom: 10px;
+        }
+
+        .action-list li:before {
+            content: "▶";
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        #achievementsListDiv {
+        list-style-type: none;
+        padding: 0;
+        text-align: center; 
+        }
+
+        #achievementsListDiv li {
+            display: inline-block;
+            background-color: #fff;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Final Fantasy XIV Achievements CRUD!</h1>
+        
+        <p>Create, read, update, and delete Final Fantasy XIV Achievements! The first 10 achievements that were added to the game are already created for you. Input the corresponding letter and press Submit.</p>
+
+        <div class="card">
+            <h2>Current List of Achievements:</h2>
+            <ul id="achievementsListDiv"></ul>
+        </div>
+
+        <div class="card">
+            <h2>What would you like to do?</h2>
+            <ul class="action-list">
+                <li>Add an achievement - C</li>
+                <li>Read the details for an achievement - R</li>
+                <li>Update the details for an achievement - U</li>
+                <li>Delete an achievement - D</li>
+            </ul>
+            <label for="achievementActionInput">Submit your choice of action:</label>
+            <input type="text" id="achievementActionInput">
+            <button id="submitButton">Submit</button>
+        </div>
+
+        <div id="readResults"></div>
+
+    </div>
+</body>
+</html>
